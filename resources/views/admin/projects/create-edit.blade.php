@@ -56,7 +56,7 @@
                 <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
-        <button type="submit" class="btn btn-primary">Confirm</button>
-        <button type="reset" class="btn btn-secondary">Cancel</button>
+        <button type="submit" class="btn btn-primary btn-custom">Confirm</button>
+        <button type="reset" class="btn btn-secondary btn-custom">Cancel</button>
     </form>
 @endsection

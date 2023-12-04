@@ -20,7 +20,7 @@
         <div class="input-group mb-3">
             <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="New Technology..."
                 id="name" name="name">
-            <button class="btn btn-primary" type="sumbit" id="button-addon2">Add</button>
+            <button class="btn btn-primary btn-custom" type="sumbit" id="button-addon2">Add</button>
         </div>
         @error('name')
             <p class="text-danger">{{ $message }}</p>
@@ -48,7 +48,7 @@
                         </form>
                     </td>
                     <td class="d-flex justify-content-end">
-                        <button onclick="submitForm({{ $technology->id }})" class="btn btn-warning me-2"><i
+                        <button onclick="submitForm({{ $technology->id }})" class="btn btn-warning btn-custom me-2"><i
                                 class="fa-solid fa-pencil"></i></button>
                         @include('admin.partials.form-delete', [
                             'route' => route('admin.technologies.destroy', $technology),

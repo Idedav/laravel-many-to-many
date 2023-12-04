@@ -23,17 +23,17 @@
                     <td>
                         @forelse ($project->technologies as $technology)
                             <a href="{{ route('admin.projects-technologies', $technology) }}"
-                                class="badge text-bg-info">{{ $technology->name }}</a>
+                                class="badge badge-custom text-decoration-none">{{ $technology->name }}</a>
                         @empty
                             -
                         @endforelse
                     </td>
                     <td>{{ $project->type?->name ?? '-' }}</td>
                     <td class="d-flex">
-                        <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning me-2">
+                        <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning btn-custom me-2">
                             <i class="fa-solid fa-pencil"></i>
                         </a>
-                        <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-primary me-2">
+                        <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-primary btn-custom me-2">
                             <i class="fa-solid fa-eye"></i>
                         </a>
                         @include('admin.partials.form-delete', [

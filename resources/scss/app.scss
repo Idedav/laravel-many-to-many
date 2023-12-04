@@ -8,7 +8,7 @@ body{
 header {
     height: 100px;
     padding: 0px 20px;
-    background-color: rgba(0,0,0,1);
+    background-color: rgba(0,0,0,.6);
     .logo{
         font-size: 2.5rem;
         font-weight: bold;
@@ -26,7 +26,7 @@ header {
 aside {
     width: 200px;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.6);
     ul{
         list-style: none;
         li{
@@ -126,4 +126,31 @@ main{
     background-color: rgba(0,0,0,0.5);
 }
 
+
+.btn-custom{
+    background: linear-gradient(45deg, #49a09d, #5f2c82);
+    border: none;
+    color: white;
+    &:hover{
+        background: linear-gradient(45deg,  #5f2c82, #49a09d);
+        color: white;
+    }
+}
+
+.badge-custom{
+    background-color: #55608f;
+    color: white;
+    &:hover{
+        background-color: #49a09d;
+    }
+}
+
+.btn-logout{
+    background-color: #49a09d;
+    border: none;
+    &:hover{
+        background-color: #5f2c82;
+        color: white;
+    }
+}
 
