@@ -15,15 +15,16 @@
                 <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
-        <div class="m-3">
-            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+        <div class="mb-3">
+            <p>Select Technologies:</p>
+            <div class="btn-group btn-group-custom" role="group" aria-label="Basic checkbox toggle button group">
                 @foreach ($technologies as $technology)
                     <input type="checkbox" class="btn-check" id="technology-{{ $technology->id }}" autocomplete="off"
                         name="technologies[]" value="{{ $technology->id }}"
                         @if (
                             ($errors->any() && in_array($technology->id, old('technologies', []))) ||
                                 (!$errors->any() && $project?->technologies->contains($technology))) checked @endif>
-                    <label class="btn btn-outline-primary"
+                    <label class="btn btn-outline btn-check-custom"
                         for="technology-{{ $technology->id }}">{{ $technology->name }}</label>
                 @endforeach
             </div>
@@ -42,10 +43,14 @@
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Image:</label>
-            <input type="file" class="form-control" id="image" name="image"
+            <input onchange="imagePreview(event)" type="file" class="form-control" id="image" name="image"
                 value="{{ old('image', $project?->image) }}">
             @if ($project)
-                <img width="150" src="{{ asset('storage/' . $project->image) }}" alt="">
+                <div class="image-container mt-3">
+                    <p>Image Preview:</p>
+                    <img id="image-preview" width="300" height="200" src="{{ asset('storage/' . $project->image) }}"
+                        alt="">
+                </div>
             @endif
         </div>
         <div class="mb-3">
@@ -59,4 +64,11 @@
         <button type="submit" class="btn btn-primary btn-custom">Confirm</button>
         <button type="reset" class="btn btn-secondary btn-custom">Cancel</button>
     </form>
+
+    <script>
+        function imagePreview(event) {
+            const imagePreview = document.getElementById('image-preview');
+            imagePreview.src = URL.createObjectURL(event.target.files[0]);
+        }
+    </script>
 @endsection

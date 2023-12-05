@@ -137,6 +137,21 @@ main{
     }
 }
 
+.btn-group-custom{
+    background-color:#55608F;
+    .btn-check-custom{
+        background-color: white;
+        border-color:#55608F;
+        color: #55608F;
+        &:hover{
+            background-color: #55608F;
+            color: white;
+        }
+    }
+}
+
+
+
 .badge-custom{
     background-color: #55608f;
     color: white;

@@ -38,7 +38,7 @@
                         @endforelse
                     </td>
                     <td>{{ $project->type?->name ?? '-' }}</td>
-                    <td class="d-flex">
+                    <td width="200px">
                         <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning me-2 btn-custom">
                             <i class="fa-solid fa-pencil"></i>
                         </a>
